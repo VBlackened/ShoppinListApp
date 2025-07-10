@@ -1,0 +1,65 @@
+﻿<Window x:Class="Shoppy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Shoppy"
+        Title="Shoppy" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="Green" Offset="0"/>
+                <GradientStop Color="Yellow" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <StackPanel Grid.Column="0" Margin="20" Width="200">
+
+            <StackPanel Margin="0,20,0,0">
+                <TextBlock Text="Name" Foreground="White" FontWeight="Bold" FontSize="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="tbx_ProductName" VerticalContentAlignment="Center"
+                     Width="150" Height="30"/>
+                    <ComboBox x:Name="cmb_ProductSymbol" FontSize="18" FontFamily="Segoe UI Emoji" 
+                  Width="50" MaxDropDownHeight="150">
+                        <ComboBoxItem>🍞</ComboBoxItem>
+                        <ComboBoxItem>🥛</ComboBoxItem>
+                        <ComboBoxItem>🍎</ComboBoxItem>
+                        <ComboBoxItem>🍌</ComboBoxItem>
+                        <ComboBoxItem>🧀</ComboBoxItem>
+                        <ComboBoxItem>🍗</ComboBoxItem>
+                        <ComboBoxItem>🥩</ComboBoxItem>
+                        <ComboBoxItem>🍫</ComboBoxItem>
+                        <ComboBoxItem>🍩</ComboBoxItem>
+                        <ComboBoxItem>🍪</ComboBoxItem>
+                        <ComboBoxItem>🍕</ComboBoxItem>
+                        <ComboBoxItem>🍚</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+
+            <Button x:Name="btn_NewProduct" Content="Add product" FontWeight="Bold" FontSize="16" 
+            Width="auto" Height="auto" Margin="5" Style="{StaticResource RoundedButton}"
+            Click="btn_NewProduct_Click" Cursor="Hand"/>
+
+            <Button x:Name="btn_DeleteProduct" Content="Delete products" FontWeight="Bold" FontSize="16" 
+            Width="auto" Height="auto" Margin="0,40,0,0" Style="{StaticResource RoundedButton}"
+            Click="btn_DeleteProduct_Click" Cursor="Hand"/>
+
+            <Image Source="pack://application:,,,/png/shopping-cart_17210433.png" 
+           Width="80" Margin="0,90" Grid.Column="0" VerticalAlignment="Bottom"
+           HorizontalAlignment="Center"/>
+
+        </StackPanel>
+
+        <ScrollViewer
+      VerticalScrollBarVisibility="Auto"
+      Grid.Column="1"
+      Margin="20">
+            <WrapPanel Grid.Column="1" x:Name="TilePanel" ItemHeight="80" ItemWidth="80"/>
+        </ScrollViewer>
+    </Grid>
+</Window>
